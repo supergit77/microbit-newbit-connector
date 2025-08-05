@@ -1,0 +1,8 @@
+{
+  "name": "microbit-newbit-connector",
+  "description": "Extension for connecting micro:bit via serial or radio (Newbit Arcade Shield 2)",
+  "dependencies": {},
+  "files": ["main.ts"],
+  "target": "arcade",
+  "preferredEditor": "ts"
+}
