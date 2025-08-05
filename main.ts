@@ -40,4 +40,60 @@ namespace microbitConnector {
     export function sendRadioMessage(msg: string) {
         radio.sendString(msg)
     }
+
+        /**
+     * Send a text to display on the micro:bit via serial. The micro:bit program should
+     * interpret messages starting with "DISPLAY:" and show the rest of the string
+     * on its 5x5 LED display.
+     */
+    //% block
+    export function displayTextSerial(text: string) {
+        serial.writeLine("DISPLAY:" + text)
+    }
+
+    /**
+     * Send a number to display on the micro:bit via serial. The micro:bit program should
+     * interpret messages starting with "NUMBER:" and show the number on its display.
+     */
+    //% block
+    export function displayNumberSerial(num: number) {
+        serial.writeLine("NUMBER:" + num.toString())
+    }
+
+    /**
+     * Clear the micro:bit display via serial. Sends a "CLEAR:" command that the
+     * micro:bit program can use to clear its LED screen.
+     */
+    //% block
+    export function clearDisplaySerial() {
+        serial.writeLine("CLEAR:")
+    }
+
+    /**
+     * Send a text to display on the micro:bit via radio. The micro:bit program should
+     * interpret messages starting with "DISPLAY:" and show the rest of the string.
+     */
+    //% block
+    export function displayTextRadio(text: string) {
+        radio.sendString("DISPLAY:" + text)
+    }
+
+    /**
+     * Send a number to display on the micro:bit via radio. The micro:bit program should
+     * interpret messages starting with "NUMBER:" and show the number on its display.
+     */
+    //% block
+    export function displayNumberRadio(num: number) {
+        radio.sendString("NUMBER:" + num.toString())
+    }
+
+    /**
+     * Clear the micro:bit display via radio. Sends a "CLEAR:" command that the
+     * micro:bit program can use to clear its LED screen.
+     */
+    //% block
+    export function clearDisplayRadio() {
+        radio.sendString("CLEAR:")
+    }
+
 }
